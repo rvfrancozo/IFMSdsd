@@ -16,15 +16,15 @@ if($bdcon) {
 $tabela = pg_query($bdcon, "CREATE TABLE IF NOT EXISTS dados (
     id serial PRIMARY KEY,
     nome VARCHAR(50) NOT NULL  
- )");
+ )") or die("fail");
 
-$dados = pg_query($bdcon, "INSERT INTO dados (nome) VALUES('izabel')");
-$dados = pg_query($bdcon, "INSERT INTO dados (nome) VALUES('fani')");
-$dados = pg_query($bdcon, "INSERT INTO dados (nome) VALUES('carla')");
-$dados = pg_query($bdcon, "INSERT INTO dados (nome) VALUES('victor')");
-$dados = pg_query($bdcon, "INSERT INTO dados (nome) VALUES('luis')");
+$dados = pg_query($bdcon, "INSERT INTO dados (nome) VALUES('izabel')")or die("fail1");
+$dados = pg_query($bdcon, "INSERT INTO dados (nome) VALUES('fani')")or die("fail2");
+$dados = pg_query($bdcon, "INSERT INTO dados (nome) VALUES('carla')")or die("fail3");
+$dados = pg_query($bdcon, "INSERT INTO dados (nome) VALUES('victor')")or die("fail4");
+$dados = pg_query($bdcon, "INSERT INTO dados (nome) VALUES('luis')")or die("fail5");
 
-$dados = pg_query($bdcon, "SELECT * FROM dados");
+$dados = pg_query($bdcon, "SELECT * FROM dados")or die("fail6");
 
 print_r($dados);
 
