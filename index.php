@@ -13,15 +13,19 @@ if($bdcon) {
     echo "Conectado com sucesso!";
 }
 
-$result = pg_query($conn, "CREATE TABLE IF NOT EXISTS stocks (
+$tabela = pg_query($bdcon, "CREATE TABLE IF NOT EXISTS dados (
     id serial PRIMARY KEY,
-    symbol character varying(10) NOT NULL UNIQUE,
-    company character varying(255) NOT NULL UNIQUE 
+    nome VARCHAR(50) NOT NULL  
  )");
 
-if (!$result) {
-    echo "An error occurred.\n";
-    exit;
-  }
+$dados = pg_query($bdcon, "INSERT INTO dados (nome) VALUES('izabel')");
+$dados = pg_query($bdcon, "INSERT INTO dados (nome) VALUES('fani')");
+$dados = pg_query($bdcon, "INSERT INTO dados (nome) VALUES('carla')");
+$dados = pg_query($bdcon, "INSERT INTO dados (nome) VALUES('victor')");
+$dados = pg_query($bdcon, "INSERT INTO dados (nome) VALUES('luis')");
+
+$dados = pg_query($bdcon, "SELECT * FROM dados");
+
+print_r($dados);
 
 ?>
