@@ -33,7 +33,7 @@ $consulta = pg_query($conn, "SELECT * FROM dados");
         <?php while($row = pg_fetch_row($consulta)) { ?> 
         <tr> 
           <td><?php echo $row['id']; ?></td>
-          <td><?php echo $row['nome']; ?></td> 
+          <td><?php echo $row['nome']; ?></td>   
           
         </tr> 
         <?php pg_query($db,"DROP TABLE dados"); } ?> 
