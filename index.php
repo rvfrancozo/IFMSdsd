@@ -1,5 +1,4 @@
 <?php
-phpinfo();
 
 $db = new PDO('
 pgsql:host=;
