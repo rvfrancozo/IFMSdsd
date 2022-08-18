@@ -14,14 +14,14 @@ if($db) {
 
 $table = "CREATE TABLE IF NOT EXISTS dados (id serial PRIMARY KEY, nome VARCHAR(50) NOT NULL)";
 
-$pg_query($table) or die ("Impossível criar a tabela");
+//$pg_query($table) or die ("Impossível criar a tabela");
 
 $nomes = array('izabel', 'fani', 'vitor', 'carla', 'luis');
 
-foreach($nomes as $nome) {
-    $sql = "INSERT INTO dados (nome) VALUES ('$nome')";
-    $pg_query($table) or die ("Impossível inserir o nome");
-}
+// foreach($nomes as $nome) {
+//     $sql = "INSERT INTO dados (nome) VALUES ('$nome')";
+//     $pg_query($table) or die ("Impossível inserir o nome");
+// }
 
 
 
