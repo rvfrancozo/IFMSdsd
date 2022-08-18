@@ -13,5 +13,15 @@ if($bdcon) {
     echo "Conectado com sucesso!";
 }
 
+$result = pg_query($conn, "CREATE TABLE IF NOT EXISTS stocks (
+    id serial PRIMARY KEY,
+    symbol character varying(10) NOT NULL UNIQUE,
+    company character varying(255) NOT NULL UNIQUE 
+ )");
+
+if (!$result) {
+    echo "An error occurred.\n";
+    exit;
+  }
 
 ?>
