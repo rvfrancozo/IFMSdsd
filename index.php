@@ -6,18 +6,18 @@ if($bd) {
     echo "<hr>CONECTADO<hr>";
 }
 
-$tabela = "CREATE TABLE IF NOT EXISTS data (id serial PRIMARY KEY, nome VARCHAR(50) NOT NULL)";
+$tabela = ("CREATE TABLE IF NOT EXISTS dados (id serial PRIMARY KEY, nome VARCHAR(50) NOT NULL)");
 
 pg_query($bd, $tabela);
 
 $nomes = array("Izabel", "Victor", "Fani", "Rafael");
 
 foreach($nomes as $nome) {
-    $sql = "INSERT INTO data (nome) VALUES ($nome)";
+    $sql = "INSERT INTO dados (nome) VALUES ('$nome')";
     pg_query($bd, $sql);
 }
 
-$consulta = "SELECT * FROM data";
+$consulta = pg_query($bd, "SELECT * FROM dados");
 
 while ($row = pg_fetch_row($consulta)) {
     echo "ID: $row[0]  Nome: $row[1]";
