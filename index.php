@@ -13,6 +13,7 @@ $pg_query($db, $table) or die ("Impossível criar a tabela");
 $nomes = array('izabel', 'fani', 'vitor', 'carla', 'luis');
 
 foreach($nomes as $nome) {
+    echo $nome."<br>";
     $sql = "INSERT INTO dados (nome) VALUES ('$nome')";
     $pg_query($db, $table) or die ("Impossível inserir o nome");
 }
