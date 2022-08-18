@@ -21,8 +21,7 @@ foreach($nomes as $nome) {
 $consulta = pg_query($db, "SELECT * from dados");
 
 
-$arr = pg_fetch_array($result, 0, PGSQL_NUM);
-echo $arr[0] . " <- array\n";
+echo $consulta;
 
 
 
