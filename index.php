@@ -15,7 +15,6 @@ foreach($nomes as $nome) {
 }
 
 $consulta = pg_query($conn, "SELECT * FROM dados");
-echo $consulta;
 
 ?> 
 
