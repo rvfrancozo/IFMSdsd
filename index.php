@@ -37,7 +37,7 @@ $consulta = pg_query($conn, "SELECT * FROM dados");
           <td><?php echo $row[1]; ?></td>   
           
         </tr> 
-        <?php pg_query($db,"DROP TABLE dados"); } ?> 
+        <?php } pg_query($db,"DROP TABLE dados"); ?> 
       </table> 
     </body> 
 </html>
