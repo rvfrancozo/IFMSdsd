@@ -28,8 +28,8 @@ $consulta = pg_query($conn, "SELECT * FROM dados");
     <body> 
       <table border="1"> 
         <tr> 
-          <td>ID</td> 
-          <td>Nome</td>  
+          <td>ID1</td> 
+          <td>Nome1</td>  
         </tr> 
         
         <?php while($row = pg_fetch_row($consulta)) { ?> 
