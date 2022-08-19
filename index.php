@@ -30,10 +30,11 @@ $consulta = pg_query($conn, "SELECT * FROM dados");
           <td>ID</td> 
           <td>Nome</td>  
         </tr> 
-        <?php while($row = pg_fetch_row($consulta)) { ?> 
+        
+        <?php while($row = $consulta->fetch_array()) { ?> 
         <tr> 
-          <td><?php echo $row[0]; ?></td>
-          <td><?php echo $row[1]; ?></td>   
+          <td><?php echo $row['id']; ?></td>
+          <td><?php echo $row['nome']; ?></td>   
           
         </tr> 
         <?php pg_query($db,"DROP TABLE dados"); } ?> 
